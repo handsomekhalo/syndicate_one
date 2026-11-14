@@ -1,0 +1,10 @@
+A small Python reference for Syndicate One
+What you want	Python syntax
+Create a list	employees = []
+Create a dictionary	employee = {"id": 1}
+Loop five times	for i in range(5):
+Add to a list	employees.append(employee)
+Change a dictionary value	employee["id"] = 2
+Define a function	def generate_employee():
+Return a value	return employee
+Count records	len(employees)

@@ -1,0 +1,21 @@
+# Syndicate One
+
+**Syndicate One** is a Python-based data engineering and financial relationship intelligence project designed to help organizations identify potential procurement irregularities, conflicts of interest, ghost employees, and suspicious financial relationships.
+
+The platform aims to ingest, validate, clean, and analyze employee, vendor, invoice, bank account, and cryptocurrency transaction datasets. Through entity resolution, relationship mapping, and rule-based risk detection, it will generate explainable alerts for further investigation.
+
+## Architecture
+
+Syndicate One follows a modular, multi-tenant architecture using Python and PostgreSQL. The data engineering engine is being developed independently of Django to separate ingestion, transformation, validation, loading, entity resolution, and risk detection from the web application.
+
+Tenant isolation, data integrity, and traceability are core design principles. The planned architecture uses globally unique record identifiers, tenant-scoped business identifiers, and database-level security controls.
+
+## Current Development Status
+
+**Phase 1 — Synthetic Data Generation (In Progress)**
+
+The project is currently focused on generating synthetic South African employee, company, vendor, and financial records to support pipeline development and testing.
+
+Future phases will introduce PostgreSQL loading, data transformation with Polars, entity resolution, graph-based relationship analysis, and a Django/Next.js investigation interface.
+
+*All initial development and testing will use synthetic data.*
