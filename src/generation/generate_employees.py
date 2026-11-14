@@ -40,7 +40,18 @@ def generate_employees(count):
 
 
 
+def export_employees_to_csv(employees, file_path):
+    Path(file_path).parent.mkdir(parents=True, exist_ok=True)#Creates the output folder if necessary
 
+    with open(file_path, "w", newline="", encoding="utf-8") as file:#Opens the CSV file and closes it automatically
+        # "w" Writes a new file or overwrites an existing one
+        writer = csv.DictWriter(#csv.DictWriter	Writes Python dictionaries as CSV rows
+            file,
+            fieldnames=employees[0].keys()#Gets the column names from the first employee
+        )
+
+        writer.writeheader()
+        writer.writerows(employees)
 
 
 
@@ -48,15 +59,10 @@ def generate_employees(count):
 if __name__ == "__main__":
     employees = generate_employees(5)
 
-    for employee in employees:
-        print(
-            employee["employee_id"],
-            employee["person_id"],
-            employee["phone_number"],
-            employee["bank_account_ref"],
+    export_employees_to_csv(
+        employees,
+        "data/synthetic/employees.csv"
+    )
 
-            employee["first_name"],
-            employee["last_name"]
-        )
-
+    print("Successfully exported", len(employees), "employees")
 
