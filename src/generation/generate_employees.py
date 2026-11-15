@@ -3,6 +3,7 @@ import random
 from faker import Faker
 import csv
 from pathlib import Path
+
 # fake = Faker()
 fake = Faker("en_GB")
 
@@ -65,4 +66,3 @@ if __name__ == "__main__":
     )
 
     print("Successfully exported", len(employees), "employees")
-
