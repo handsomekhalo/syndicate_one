@@ -19,3 +19,53 @@ The project is currently focused on generating synthetic South African employee,
 Future phases will introduce PostgreSQL loading, data transformation with Polars, entity resolution, graph-based relationship analysis, and a Django/Next.js investigation interface.
 
 *All initial development and testing will use synthetic data.*
+
+## Development Status
+
+**Phase 1 — Synthetic Data Generation (Completed: Initial Employee Dataset)**
+
+- Implemented a Python-based synthetic employee generator using Faker.
+- Generated employee records with sequential identifiers, names, cities, phone numbers, and fictional bank account references.
+- Implemented CSV export to `data/synthetic/employees.csv`.
+- Established `dev` and `main` Git branches for development and future deployment workflows.
+
+**Phase 2 — ETL Pipeline (In Progress)**
+
+- **Extraction:** Implemented CSV ingestion using Python's `csv.DictReader`.
+- **Validation:** Implemented required-field checks for employee records.
+- **Transformation:** Added logic to separate valid and rejected records.
+- **Data Quality Reporting:** Implemented identification of missing fields and rejection reasons.
+- **Testing:** Successfully tested records with missing first names and surnames.
+
+### Current Pipeline
+
+```text
+Synthetic Employee Generator
+           |
+           v
+       CSV Export
+           |
+           v
+      CSV Extraction
+           |
+           v
+   Required Field Validation
+           |
+           v
+     Record Classification
+        /          \
+       v            v
+ Valid Records   Rejected Records
+                 + Reasons
+```
+
+### Next Development Milestones
+
+1. Implement employee data cleaning and normalization.
+2. Validate employee identifiers and data types.
+3. Add automated unit tests for extraction and transformation.
+4. Implement database loading using PostgreSQL.
+5. Expand synthetic datasets to companies, vendors, and invoices.
+6. Introduce entity resolution and relationship-based risk detection.
+
+**Note:** The platform is under active development. Risk detection, database persistence, and the web interface are planned features, not yet implemented.
