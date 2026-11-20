@@ -7,10 +7,11 @@
     "repositoryId": null,
     "repositoryName": null,
     "createdAt": "2026-11-14T10:10:11.481Z",
-    "updatedAt": "2026-11-20T08:39:59.229Z",
+    "updatedAt": "2026-11-20T09:39:50.827Z",
     "languages": [
       "Markdown",
-      "Python"
+      "Python",
+      "SQL"
     ]
   },
   "tools": [
@@ -1257,6 +1258,61 @@
         },
         {
           "patternId": "Prospector_pyflakes"
+        }
+      ]
+    },
+    {
+      "toolId": "SQLint",
+      "patterns": [
+        {
+          "patternId": "SQLint_allIssues"
+        }
+      ]
+    },
+    {
+      "toolId": "SQLFluff",
+      "patterns": [
+        {
+          "patternId": "SQLFluff_AL01_aliasing.table"
+        },
+        {
+          "patternId": "SQLFluff_AL02_aliasing.column"
+        },
+        {
+          "patternId": "SQLFluff_AM01_ambiguous.distinct"
+        },
+        {
+          "patternId": "SQLFluff_CP01_capitalisation.keywords"
+        },
+        {
+          "patternId": "SQLFluff_CP02_capitalisation.identifiers"
+        },
+        {
+          "patternId": "SQLFluff_LT01_layout.spacing"
+        },
+        {
+          "patternId": "SQLFluff_LT02_layout.indent"
+        },
+        {
+          "patternId": "SQLFluff_LT04_layout.commas"
+        },
+        {
+          "patternId": "SQLFluff_RF01_references.from"
+        },
+        {
+          "patternId": "SQLFluff_RF02_references.qualification"
+        },
+        {
+          "patternId": "SQLFluff_ST01_structure.else_null"
+        },
+        {
+          "patternId": "SQLFluff_ST03_structure.unused_cte"
+        },
+        {
+          "patternId": "SQLFluff_ST06_structure.column_order"
+        },
+        {
+          "patternId": "SQLFluff_ST07_structure.using"
         }
       ]
     }

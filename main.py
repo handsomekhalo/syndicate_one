@@ -15,5 +15,25 @@ def main():
     print("Rejected employees:", len(rejected_employees))
 
 
+
+
+from src.database.connection import get_db_connection
+
+
+def test_database_connection():
+    try:
+        with get_db_connection() as connection:
+            with connection.cursor() as cursor:
+                cursor.execute("SELECT version();")
+                result = cursor.fetchone()
+                print("Database connected successfully!")
+                print(result[0])
+
+    except Exception as error:
+        print(f"Database connection failed: {error}")
+
+
 if __name__ == "__main__":
     main()
+    test_database_connection()
+

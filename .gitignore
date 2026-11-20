@@ -98,3 +98,9 @@ venv/
 syndicate_one_venv/
 venv/
 .env/
+
+
+env.
+.venv/
+syndicate_one_venv/
+__pycache__/
