@@ -69,3 +69,21 @@ Synthetic Employee Generator
 6. Introduce entity resolution and relationship-based risk detection.
 
 **Note:** The platform is under active development. Risk detection, database persistence, and the web interface are planned features, not yet implemented.
+
+
+### Data Cleaning and Automated Testing updated
+
+- Implemented employee data normalization, including name capitalization and phone number whitespace removal.
+- Integrated data cleaning into the transformation pipeline before required-field validation.
+- Implemented rejection tracking with missing-field reasons.
+- Introduced Python's built-in `unittest` framework.
+- Created and successfully executed the first automated unit test for `clean_employee()`, verifying name and phone number normalization.
+
+**Run automated tests:**
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+**Next:** Expand unit test coverage, validate employee data types, and prepare the pipeline for PostgreSQL integration.
+

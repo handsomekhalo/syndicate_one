@@ -1,27 +1,19 @@
-from src.pipeline.transform import clean_employee, get_missing_fields, has_required_fields, transform_employees
+from src.pipeline.transform import clean_employee, convert_employee_types, get_missing_fields, has_required_fields, transform_employees
 from src.pipeline.extract import extract_employees
 
-employees = extract_employees("data/synthetic/employees.csv")
+from src.pipeline.extract import extract_employees
+from src.pipeline.transform import transform_employees
 
 
-# employees[0]["first_name"] = "  thabo  "
-employees[0]["first_name"] = "   "
-employees[0]["last_name"] = "MOKOENA"
-employees[0]["phone_number"] = "  076 374 1256  "
-# employees[0]["first_name"] = "   "
-valid_employees, rejected_employees = transform_employees(employees)
-print(valid_employees[0])
-print(rejected_employees[0])
+def main():
+    employees = extract_employees("data/synthetic/employees.csv")
 
-# test_employee = {
-#     "employee_id": "101",
-#     "tenant_id": "3",
-#     "first_name": "  thabo  ",
-#     "last_name": "MOKOENA",
-#     "phone_number": "  076 374 1256  "
-# }
+    valid_employees, rejected_employees = transform_employees(employees)
 
-# result = clean_employee(test_employee)
+    print("Total extracted:", len(employees))
+    print("Valid employees:", len(valid_employees))
+    print("Rejected employees:", len(rejected_employees))
 
 
-# print(result)
+if __name__ == "__main__":
+    main()

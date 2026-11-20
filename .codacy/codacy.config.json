@@ -7,7 +7,7 @@
     "repositoryId": null,
     "repositoryName": null,
     "createdAt": "2026-11-14T10:10:11.481Z",
-    "updatedAt": "2026-11-14T11:23:21.696Z",
+    "updatedAt": "2026-11-20T08:39:59.229Z",
     "languages": [
       "Markdown",
       "Python"
@@ -1232,6 +1232,9 @@
         {
           "patternId": "Lizard_file-nloc-critical"
         }
+      ],
+      "exclude": [
+        "tests/**"
       ]
     },
     {
