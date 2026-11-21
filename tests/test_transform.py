@@ -39,29 +39,30 @@ class TestEmployeeTransformation(unittest.TestCase):
                 "employee_id": "101",
                 "first_name": "Thabo",
                 "last_name": "Mokoena",
-                "phone_number": "0763741256"
+                "phone_number": "0763741256",
+                "is_active": "True"
             },
             {
                 "employee_id": "102",
                 "first_name": "",
                 "last_name": "Dlamini",
-                "phone_number": "0763741257"
+                "phone_number": "0763741257",
+                "is_active": "True"
             },
             {
                 "employee_id": "103",
                 "first_name": "Lerato",
                 "last_name": "",
-                "phone_number": "0763741258"
+                "phone_number": "0763741258",
+                "is_active": "False"
             }
         ]
 
         valid, rejected = transform_employees(employees)
-     # 3. Assert: Check counts and rejection reasons
+
         self.assertEqual(len(valid), 1)
         self.assertEqual(len(rejected), 2)
         self.assertEqual(rejected[0]["rejection_reasons"], ["first_name"])
-
-       
 
 
 
