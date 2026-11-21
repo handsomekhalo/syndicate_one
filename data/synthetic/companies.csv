@@ -1,0 +1,6 @@
+company_id,company_name,registration_number,city,is_active
+COMP-0001,Price-Stone,REG-000001,Port Eileenstad,True
+COMP-0002,"Wells, Byrne and Holmes",REG-000002,Graemeville,True
+COMP-0003,Black and Sons,REG-000003,Reeceberg,True
+COMP-0004,Morris-Hussain,REG-000004,Tomhaven,True
+COMP-0005,Page-Gill,REG-000005,Atkinston,True

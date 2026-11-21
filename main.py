@@ -59,5 +59,22 @@ def main():
     print("Inserted:", inserted_count)
 
 
+from src.generation.generate_companies import generate_companies
+
+companies = generate_companies(5)
+
+for company in companies:
+    print(company)
+
+
+from src.generation.generate_companies import generate_companies
+from src.generation.generate_vendors import generate_vendors
+
+companies = generate_companies(5)
+vendors = generate_vendors(companies)
+
+for vendor in vendors:
+    print("is", vendor)
+
 if __name__ == "__main__":
     main()

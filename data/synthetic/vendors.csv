@@ -1,0 +1,6 @@
+vendor_id,tenant_id,company_id,vendor_status
+VEN-0001,3,COMP-0001,active
+VEN-0002,3,COMP-0002,active
+VEN-0003,3,COMP-0003,active
+VEN-0004,3,COMP-0004,active
+VEN-0005,3,COMP-0005,active
