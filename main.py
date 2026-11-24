@@ -1,7 +1,6 @@
 from src.pipeline.transform import clean_employee, convert_employee_types, get_missing_fields, has_required_fields, transform_employees
-from src.pipeline.extract import extract_employees
+from src.pipeline.extract import extract_csv
 
-from src.pipeline.extract import extract_employees
 from src.pipeline.transform import transform_employees
 
 
@@ -38,13 +37,13 @@ from src.pipeline.transform import transform_employees
 #     test_database_connection()
 
 
-from src.pipeline.extract import extract_employees
+from src.pipeline.extract import extract_csv
 from src.pipeline.transform import transform_employees
 from src.pipeline.load import load_employees
 
 
 def main():
-    employees = extract_employees("data/synthetic/employees.csv")
+    employees = extract_csv("data/synthetic/employees.csv")
 
     valid_employees, rejected_employees = transform_employees(employees)
 
@@ -59,22 +58,39 @@ def main():
     print("Inserted:", inserted_count)
 
 
-from src.generation.generate_companies import generate_companies
+# from src.generation.generate_companies import generate_companies
 
-companies = generate_companies(5)
+# companies = generate_companies(5)
 
-for company in companies:
-    print(company)
+# for company in companies:
+#     print(company)
 
 
-from src.generation.generate_companies import generate_companies
-from src.generation.generate_vendors import generate_vendors
+# from src.generation.generate_companies import generate_companies
+# from src.generation.generate_vendors import generate_vendors
 
-companies = generate_companies(5)
-vendors = generate_vendors(companies)
+# companies = generate_companies(5)
+# vendors = generate_vendors(companies)
 
-for vendor in vendors:
-    print("is", vendor)
+# for vendor in vendors:
+#     print("is", vendor)
+
+
+# from src.pipeline.extract import extract_csv
+# from src.pipeline.load_companies import load_companies
+
+# companies = extract_csv("data/synthetic/companies.csv")
+
+# inserted = load_companies(companies)
+
+# print("Companies inserted:", inserted)
+from src.pipeline.load_vendors import load_vendors
+
+vendors = extract_csv("data/synthetic/vendors.csv")
+
+inserted_vendors = load_vendors(vendors, tenant_id=3)
+
+print("Vendors inserted:", inserted_vendors)
 
 if __name__ == "__main__":
     main()
