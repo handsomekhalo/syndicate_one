@@ -53,3 +53,7 @@ def load_companies(companies):
 
 
         return inserted_count
+    
+
+
+
